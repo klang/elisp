@@ -1,0 +1,15 @@
+(if (include 'cc-mode)
+    (progn 
+      (set-auto-mode-alist "\\.[ch]\\'" 'c-mode)
+      (set-auto-mode-alist "\\.\\([CH]\\|cc\\|hh\\)\\'" 'c++-mode)
+      (set-auto-mode-alist "\\.[ch]\\(pp\\|xx\\|\\+\\+\\)\\'" 'c++-mode)
+      (set-auto-mode-alist "\\.java\\'" 'java-mode)
+      (set-auto-mode-alist "\\.jsp\\'" 'java-mode)
+      (set-auto-mode-alist "\\.lex\\'" 'c-mode)
+      (set-auto-mode-alist "\\.m\\'" 'objc-mode)
+      (defun c-modes-setup nil
+	(interactive)
+	(c-toggle-auto-state 1)
+	(c-toggle-hungry-state 1)
+	(c-set-style "gnu"))
+      (add-hook 'c-mode-common-hook 'c-modes-setup)))

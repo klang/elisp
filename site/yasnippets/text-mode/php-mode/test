@@ -1,0 +1,12 @@
+#name : class Test{ ... } extends UnitTestCase
+# --
+include_once('simpletest/autorun.php');
+include_once('$1.class.php');
+
+class Test${1:class_name} extends UnitTestCase
+{
+  public function test__construct()
+  {
+    $0
+  }
+}

@@ -1,0 +1,19 @@
+#name : function ... ( ... ) { ... }
+#  http://ihtcvs.ip.tdk.dk/viewcvs/viewcvs.cgi/pondus/adman/ws/AdManVlanMoveSOA.inc.php?rev=1.2&content-type=text/vnd.viewcvs-markup
+# --
+/**
+* $2 - ${[Short description]}.
+*
+* ${[Detailed description - multiple lines allowed]}
+*
+* @param  $3
+* @param  string $var     [Description of the variable passed]
+* @param  array $attr     [Description of the array passed]
+* @return string          [Description of the returned value]
+* @author ${[author-name]}, ${[department]}
+* @access $1
+*/
+${1:access_method} function ${2:function_name} (\$${3:arg1})
+{
+  $0
+}

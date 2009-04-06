@@ -1,0 +1,6 @@
+#name: while (list(key,value = each(array)))  { ... } reset(array)
+# --
+while(list(\$${2:key}, \$${3:value}) = each(\$${1:array})) {
+  $0
+}
+reset(\$$1);

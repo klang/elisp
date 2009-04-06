@@ -1,0 +1,20 @@
+#name : /** [standard boiler plate] */
+# --
+/**
+================================================================================
+* ${[Short description]}
+* <pre>
+* ${[Detailed description - multiple lines allowed]}
+* </pre>
+*
+* @package  ${package}
+* @author   `author-name`, `author-mail-address`, `author-department`
+* @version  \$Id:  \$
+================================================================================
+*/
+
+/**
+* Include files.
+* @ignore  (duplicates from required files)
+*/
+$0

@@ -1,0 +1,4 @@
+#name : print"<pre>".htmlentities( .. )."</pre>";
+# --
+print"<pre>$1:\\n".htmlentities(\$${1:var})."</pre>";
+$0

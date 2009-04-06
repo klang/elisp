@@ -1,0 +1,35 @@
+##echo "explorer"
+### cygwin magic
+
+## opens a standard file explorer window at the current location
+## e  - just a window at current location
+## eh - complete folder hieracy 
+## er - folder hieracy starting at current location
+
+function explorer_wrapper {
+    explorer $2$(cygpath -w -a $1)
+};
+function e {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    explorer_wrapper $target
+};
+function eh {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    explorer_wrapper $target '/e,'
+};
+function er {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    explorer_wrapper $target '/e,/root,'
+};

@@ -1,0 +1,13 @@
+#name : class { ... }
+# --
+/**
+* $1 - ${[Short description]}.
+* @subpackage ${[subpackage]}
+*/
+class ${1:class_name}
+{
+  public function __construct()
+  {
+    $0
+  }
+}

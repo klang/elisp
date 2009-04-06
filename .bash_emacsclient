@@ -1,0 +1,36 @@
+##echo "emacsclient"
+### cygwin magic
+
+## new-frame           - make a new emacs frame
+## edit-new-frame file - edit file in new emacs frame
+## edit file           - edit file in existing emacs frame
+
+# http://www.emacswiki.org/emacs/EmacsClient
+
+function new-frame() {
+    emacsclient -e "(new-frame)"
+}
+
+function edit-new-frame() {
+    edit $1 "yes"
+}
+
+function edit() {
+    local FILE=$1
+
+    if [[ -z $FILE ]]; then
+       echo "Missing filename"
+       return
+    fi
+
+    if [ $FILE[0] != "/" -o $FILE[0] = "~" ]
+    then
+        FILE=$(cygpath -m -a $(pwd))"/$FILE"
+    fi
+
+    if [[ -z $2 ]]; then
+       emacsclient -n $FILE
+    else
+       emacsclient -e "(find-file-other-frame \"$FILE\")"
+    fi
+}
