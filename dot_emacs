@@ -8,3 +8,9 @@
 ;; load ^[0-9]+.*\\.el files from ~/elisp
 (load "~/elisp/load-elisp-files.el" nil t)
 
+(defwrk wrk-dotemacs "emacs configuration files and friends"
+  "~/.bash_profile"
+  "~/.emacs")
+
+(defwrk wrk-current "load the file that contain all the crap I am currently working on"
+  "~/wrk/elisp/current.el")
