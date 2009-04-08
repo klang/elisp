@@ -19,6 +19,10 @@
 (global-set-key [f3] 'other-frame)
 (global-set-key [C-f3] 'other-window)
 (global-set-key [f9] '(lambda () (interactive) (save-buffer) (server-edit)) )
+(global-set-key [C-f11] 'dos2unix)
+(global-set-key [(f8)] 'narrow-to-function)
+(global-set-key [(S-f8)] 'widen)
+
 ;; (global-set-key [C-c C-c] 'comment-region)
 (global-set-key [C-f11] '(lambda () (interactive) (setq show-trailing-whitespace t)))
 (global-set-key [f11] '(lambda () (interactive) (switch-to-buffer "*scratch*")))
