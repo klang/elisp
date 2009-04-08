@@ -1,5 +1,5 @@
 (defun set-auto-mode-alist (regexp mode)
-  "Sets emacs to automatically use MODE when a file setifying REGEXP is loaded
+  "Sets emacs to automatically use MODE when a file satifying REGEXP is loaded
 set-auto-mode checks that the requested MODE exists"
   (if (functionp mode)
       (add-to-list 'auto-mode-alist (cons regexp mode))))
