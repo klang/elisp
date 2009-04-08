@@ -12,7 +12,7 @@
 
 (global-set-key [f4] 'speedbar-get-focus)
 (define-key global-map [(meta return)] 'hippie-expand)
-;; fjern try-expand-line fra default værdi
+;; remove try-expand-line from default value
 (setq hippie-expand-try-functions-list (remove 'try-expand-line hippie-expand-try-functions-list))
 ;; get out of recursive editing mode [[[(fundamental)]]]
 (global-set-key [f2] 'top-level)
@@ -27,10 +27,6 @@
 
 ; run buffer as php/perl/sh script
 (global-set-key [f10] 'execute-buffer-script)
-
-;; linenumbers
-;;(require 'linum)
-;; M-x linum
 
 ; toggles linenum+highlight mode
 (global-set-key [C-f12] '(lambda () (interactive) (highlight-current-line-minor-mode nil) (if (include 'linum) (linum))))
