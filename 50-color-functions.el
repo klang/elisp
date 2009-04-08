@@ -99,7 +99,7 @@
     (header-line ((t (:background "grey20" :foreground "grey90"))))
     (help-argument-name ((t (nil))))
     (highlight ((t (:background "darkolivegreen"))))
-    (highlight-current-line-face ((t (:background "wheat"))))
+    (highlight-current-line-face ((t (:background "#335A4B"))))
     (isearch ((t (:background "palevioletred2" :foreground "brown4"))))
     (iswitchb-current-match ((t (nil))))
     (iswitchb-invalid-regexp ((t (nil))))
