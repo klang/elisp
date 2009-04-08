@@ -1,3 +1,13 @@
+;;; I always anted a (indent-buffer) function
+(if (not (functionp 'indent-buffer))
+    (defun indent-buffer (&optional buffer)
+      "Indent the BUFFER (default current) according to mode"
+      (interactive "bIndent buffer: ")
+      (save-excursion
+	(set-buffer (or buffer
+			current-buffer))
+	(indent-region (point-min) (point-max) nil))))
+
 (defun php2sql nil
   "makes sql copied from php executable in mysql"
   (interactive)
@@ -55,11 +65,6 @@
 
 (require 'highlight-current-line)
 ;; M-x highlight-current-line-minor-mode
-
-
-(global-set-key [(f11)] 'dos2unix)
-(global-set-key [(f8)] 'narrow-to-function)
-(global-set-key [(S-f8)] 'widen)
 
 (define-skeleton reddit-href-anchor
   "reddit anchor tag."
