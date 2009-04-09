@@ -7,5 +7,6 @@ set-auto-mode checks that the requested MODE exists"
 ;; set special modes
 ;; could be done nicer..
 (add-to-list 'auto-mode-alist '("\\.cgi$" . perl-mode))
+(add-to-list 'auto-mode-alist '("\\.esh$" . emacs-lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
-
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
