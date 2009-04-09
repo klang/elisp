@@ -59,24 +59,24 @@
 
 ;; dump this data structure to disk and read it into memory again.
 
-(defun cp-add-file-to-project "add a file to a specified project" nil)
-(defun cp-remove-file-from-project "remove a file from a specified project" nil)
-(defun cp-remove-project "removes an entire project" nil)
-(defun cp-create-project-from-open-buffers "creates a new project from the currently open buffers, asking y/n for each file" nil)
-(defun cp-update-project-from-open-buffers "updates a project with the currently open buffers" nil)
+;; (defun cp-add-file-to-project "add a file to a specified project" nil)
+;; (defun cp-remove-file-from-project "remove a file from a specified project" nil)
+;; (defun cp-remove-project "removes an entire project" nil)
+;; (defun cp-create-project-from-open-buffers "creates a new project from the currently open buffers, asking y/n for each file" nil)
+;; (defun cp-update-project-from-open-buffers "updates a project with the currently open buffers" nil)
 
-(defun cp-open-project "open the project/set of files" nil)
-(defun cp-close-project "closes the project/set of files" nil)
+;; (defun cp-open-project "open the project/set of files" nil)
+;; (defun cp-close-project "closes the project/set of files" nil)
 
-(defmacro cp-wrk-define (name description files)
-  "defines a macro"
-   `(defun ,name ()
-	,description
-	(interactive)
-	(let ((files ',files))
-	  (while files
-	    (find-file (car files))
-	    (setq files (cdr files))))))
+;; (defmacro cp-wrk-define (name description files)
+;;   "defines a macro"
+;;    `(defun ,name ()
+;; 	,description
+;; 	(interactive)
+;; 	(let ((files ',files))
+;; 	  (while files
+;; 	    (find-file (car files))
+;; 	    (setq files (cdr files))))))
 
 ;; (define-open-project-file wrk-project ("list" "of" "paths" "to" "files"))
 ;; (define-open-project-file wrk-p1 "project p1" ("~/a" "~/b" "~/c"))
