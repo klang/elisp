@@ -9,4 +9,4 @@
 (load "~/elisp/load-elisp-files.el" nil t)
 
 ;; load the file that contain all the wrk sets
-(load "~/dot_wrk-current.el")
+(load "~/elisp/dot_wrk-current.el")
