@@ -29,21 +29,23 @@
       (add-hook 'find-file-hooks 'paren-mode-if-wanted)))
 
 ;;; highlight current s-expression
-(require 'mic-paren) ;; taget fra Emacs.app
-(defface paren-face-match-fancy
-  '((((class color)) (:background "#335353"))
-    (t (:background "gray")))
-  "Mic-paren mode face used for a matching paren."
-  :group 'faces
-  :group 'mic-paren-matching)
-
-(defface paren-face-match-normal
-  '((((class color)) (:background "azure"))
-    (t (:background "gray")))
-  "Mic-paren mode face used for a matching paren."
-  :group 'faces
-  :group 'mic-paren-matching)
-
-(paren-activate)
-;;(setq paren-match-face (quote paren-face-match-normal))
-(setq paren-sexp-mode t)
+(if (include 'mic-paren) ;; taget fra Emacs.app
+    (progn
+      (defface paren-face-match-fancy
+	'((((class color)) (:background "#335353"))
+	  (t (:background "gray")))
+	"Mic-paren mode face used for a matching paren."
+	:group 'faces
+	:group 'mic-paren-matching)
+      
+      (defface paren-face-match-normal
+	'((((class color)) (:background "azure"))
+	  (t (:background "gray")))
+	"Mic-paren mode face used for a matching paren."
+	:group 'faces
+	:group 'mic-paren-matching)
+      
+      (paren-activate)
+      ;;(setq paren-match-face (quote paren-face-match-normal))
+      (setq paren-sexp-mode t)
+      ))

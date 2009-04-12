@@ -8,7 +8,7 @@ Also returns t if FEATURE is defined as a function."
 	(if (load (or file-name
 		      (symbol-name feature)) t)
 	    (message "Loaded: %s" (or file-name
-					(symbol-name feature)))))
+				      (symbol-name feature)))))
     (message "Already loaded: %s" (symbol-name feature)))
   (or (featurep feature)
       (functionp feature)))
