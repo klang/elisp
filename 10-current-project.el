@@ -21,18 +21,6 @@
 ;;    (loop while files collecting (find-file (pop files)))))
 
 
-;; third shot, using loop while collecting
-;; (defmacro defwrk (name description &rest files)
-;;    `(defun ,name ()
-;; 	,description
-;; 	(interactive)
-;; 	  (loop while ,files collecting (find-file (pop ,files)))))
-;; produces this (which is wrong)
-;;(defun wrk-p1 nil "project p1" (interactive)
-;;  (loop while ("~/a" "~/b" "~/c") collecting
-;;	(find-file (pop ("~/a" "~/b" "~/c")))))
-;;
-
 ; (defwrk wrk-project "description" "paths" "to" "files")
 ; M-x wrk-project
 ; to load files
@@ -48,9 +36,6 @@
 
 ;; (print (macroexpand '(defwrk wrk-p1 "project p1" "~/a" "~/b" "~/c")))
 ;; (defwrk wrk-p1 "project p1" "~/a" "~/b" "~/c")
-
-
-
 
 (setq *projects* '((p1 "description of project 1"
 		    ("~/a" "~/b" "~/c"))
@@ -84,6 +69,16 @@
 ;; to load files
 
 ;; (setf *project* 'p1)
+;; (print *projects* (get-buffer "NOTES"))
+;; (print (concat "(setq *projecats* '" *projects* ")") (get-buffer "NOTES"))
+
+;; (progn
+;;   (princ "(setq *projects* '" (get-buffer "NOTES"))
+;;   (print *projects* (get-buffer "NOTES"))
+;;   (princ ")" (get-buffer "NOTES"))
+;; )
+
+;; (princ "(setq *projects '" *projects* ")" (get-buffer "NOTES"))
 
 ;(defun get-project (project projects)
 ;  (second (assoc project projects)))
