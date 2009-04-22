@@ -80,5 +80,4 @@ name-test.ext   -> name.ext otherwise"
   (td-other-file))
 
 (global-set-key [f7] 'td-other-file)
-
-
+(global-set-key "\C-xt" 'td-other-file)
