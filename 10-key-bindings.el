@@ -43,8 +43,9 @@
 (global-set-key [(S-f8)] 'widen)
 
 ;; (global-set-key [C-c C-c] 'comment-region)
-(global-set-key [C-f11] '(lambda () (interactive) (setq show-trailing-whitespace t)))
+(global-set-key [M-f11] '(lambda () (interactive) (if (eq show-trailing-whitespace t) (setq show-trailing-whitespace nil) (setq show-trailing-whitespace t))))
 (global-set-key [f11] '(lambda () (interactive) (switch-to-buffer "*scratch*")))
+(global-set-key [C-f11] '(lambda () (interactive) (bash)))
 ; toggles luddite mode
 (global-set-key [f12] '(lambda () (interactive) (tool-bar-mode -1) (menu-bar-mode nil) (scroll-bar-mode nil)))
 
