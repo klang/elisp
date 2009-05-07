@@ -1,16 +1,16 @@
 #name : function ... ( ... ) { ... }
 # --
 /**
-* $1 - [Short description].
-*
-* [Detailed description - multiple lines allowed]
-*
-* @param  $2
-* @param  string $var     [Description of the variable passed]
-* @param  array $attr     [Description of the array passed]
-* @return string          [Description of the returned value]
-* @author [author-name], [department]
-*/
+ * $1 - [Short description].
+ *
+ * [Detailed description - multiple lines allowed]
+ *
+ * @param  $2
+ * @param  string $var     [Description of the variable passed]
+ * @param  array $attr     [Description of the array passed]
+ * @return string          [Description of the returned value]
+ * @author [author-name], [department]
+ */
 function ${1:function_name} (\$${2:arg1})
 {
   $0
