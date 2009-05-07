@@ -36,15 +36,12 @@
 	 ;; Okay, lets get a list of files
 	 (files (if load-dir
 		    (directory-files load-dir t emacs-startup-load-regexp nil))))
-    (while files
-      ;;(byte-compile-if-needed (car files))
-      (load (car files) t nil t)
-      (setq files (cdr files)))
+    (mapcar 'load files)
     load-dir))
 
 (add-to-list 'load-path emacs-startup-load-dir)
 (add-to-list 'load-path (concat emacs-startup-load-dir "/site/"))
 
-(load-elisp-files)
+(load-elisp-files "~/elisp")
 
 
