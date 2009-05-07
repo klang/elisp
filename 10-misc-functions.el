@@ -33,7 +33,7 @@
   (save-excursion
     (while (query-replace-regexp "^.*\\(~/.*\\)$" "(find-file \"\\1\")"))))
 
-(defun dos2unix nil nil (interactive)
+(defun dos2unix nil nil (interactive) 
   (set-buffer-file-coding-system 'undecided-unix))
 
 (defun replace-multiple (replaces)
