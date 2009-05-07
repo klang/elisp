@@ -13,6 +13,17 @@
 (defun bash-filename (file) "returns name for file name.ext"
   (car (split-string (bash-basename file) (concat "\\." (bash-extension file) "$") t)))
 
+(defgroup testdriven nil
+  "Testdriven is used for easing the work in test driven development.
+Switching between test and production code made easy."
+  :prefix "td-"
+  :link '(url-link "http://github.com/klang/elisp"))
+
+(defcustom testdriven-testfile-marker "-test"
+  ""
+  :group 'testdriven
+  :type 'string)
+
 (defun td-test-file (file &optional marker) 
   "returns a sensible test script filename, without path. 
 name.ext -> name-marker.ext if marker is given
@@ -81,3 +92,4 @@ name-test.ext   -> name.ext otherwise"
 
 (global-set-key [f7] 'td-other-file)
 (global-set-key "\C-xt" 'td-other-file)
+(global-set-key "\C-x5t" 'td-other-file-other-window)
