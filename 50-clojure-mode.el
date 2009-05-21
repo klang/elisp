@@ -7,11 +7,13 @@
 
 (setq clojure-src-root "~/lisp/clj")
 
-;; this does make origin/master work
-;; (setq swank-clojure-extra-classpaths
-;;       (cons (concat clojure-src-root "/swank-clojure")
-;;         (when (file-directory-p "~/.clojure")
-;;           (directory-files "~/.clojure" t ".jar$"))))
+; this does make origin/master work, on linux and mac
+ (setq swank-clojure-extra-classpaths
+       (cons (expand-file-name (concat clojure-src-root "/swank-clojure/"))
+ 	    (when (file-directory-p "~/.clojure")
+ 	      (directory-files "~/.clojure" t ".jar$"))))
+
+
 
 (add-to-list 'load-path "~/lisp/clj/clojure-mode")
 (require 'clojure-mode)
