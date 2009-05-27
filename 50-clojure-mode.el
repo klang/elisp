@@ -16,7 +16,7 @@
 
 (add-to-list 'load-path "~/lisp/clj/technomancy_clojure-mode")
 ;(add-to-list 'load-path "~/lisp/clj/jochu_clojure-mode")
-(require 'clojure-mode)
+(if (include 'clojure-mode)
 
 ;; M-x clojure-install
 ;; we let clojure-mode get all the source clojure, clojure-contrib,
@@ -31,4 +31,5 @@
 ;;
 ;; restart emacs and write M-x slime to start things up nicely
 
-(eval-after-load 'clojure-mode '(clojure-slime-config))
+    (eval-after-load 'clojure-mode '(clojure-slime-config))
+)
