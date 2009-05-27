@@ -44,4 +44,19 @@
 
 (load-elisp-files "~/elisp")
 
+(defun elisp-update ()
+ "Update elisp."
+ (interactive)
+ (message "Updating...")
+ (let ((repo "~/elisp"))
+   (unless (= 0 (shell-command (format "cd %s; git pull origin master" repo)))
+     (error "elisp update failed: %s" repo))))
+
+(defun clojure-mode-update ()
+ "Update clojure-mode."
+ (interactive)
+ (message "Updating...")
+ (dolist (repo '("~/lisp/clj/technomancy_clojure-mode" "~/lisp/clj/jochu_clojure-mode"))
+   (unless (= 0 (shell-command (format "cd %s; git pull origin master" repo)))
+     (error "clojure-mode update failed: %s" repo))))
 
