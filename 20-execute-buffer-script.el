@@ -10,7 +10,7 @@
 		(message "executing %s script" ext)))
       (1 (message "%s unknown extension" ext)))))
 
-(defun execute-buffer-script ()
+(defun execute-buffer-script-1 ()
   "executes the script in the current buffer"
   (interactive)
   (execute-buffer-script-generator
@@ -30,5 +30,30 @@
 
 ;; now, I could just have written _that_, but where is the fun?
 ;; Karsten Lang Pedersen, karsten@lang.dk, 20080806 .. trying to learn lisp
+
+(defvar extsion-to-executer-bindings ())
+(add-to-list 'extsion-to-executer-bindings '("pl" . "perl"))
+(add-to-list 'extsion-to-executer-bindings '("php" . "php -f"))
+(add-to-list 'extsion-to-executer-bindings '("sh" . "bash"))
+
+;; -> maybe finding that binding in the first line of the buffer would be an idea?
+;;    (that strategy does not work consistently for php, though.)
+;; #!/usr/local/bin/perl
+;; <?php
+;; #!/bin/bash
+;;
+(defun lookup-executer (ext) 
+   "find appropriate executer for script"
+   (interactive)
+   (cdr (assoc ext extsion-to-executer-bindings )) )
+
+(defun execute-buffer-script ()
+  "executes the script in the current buffer"
+  (interactive)
+  (let ( (ext (first (last (split-string (buffer-name) "\\." t)))) )
+    (zerop (shell-command (concat (lookup-executer ext) " " (buffer-name))))))
+
+;; comming to think about it .. there was another way to do this, without the macro
+;; Karsten Lang Pedersen, karsten@lang.dk, 20090703 .. still trying to learn lisp
 
 (global-set-key [f10] 'execute-buffer-script)
