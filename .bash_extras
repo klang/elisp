@@ -1,0 +1,39 @@
+#!/bin/bash
+
+.. (){
+    local arg=${1:-1};
+    local dir=""
+    while [ $arg -gt 0 ]; do
+	dir="../$dir"
+	arg=$(($arg - 1));
+    done
+    cd $dir >&/dev/null
+}
+
+up (){
+    [[ $# == 1 ]] && a=$1 || ([[ $# == 0 ]] && a=1 || echo "Enter only one or zero parameter" )
+    echo "Moving up $a dirctories..."
+    for (( i=0; i<$a ; i++ ))
+    do
+	builtin cd ..
+	echo "Up one directory to $(pwd) .. "
+    done
+    ls
+}
+
+... (){
+    if [ -z "$1" ]; then
+	return
+    fi
+    local maxlvl=16
+    local dir=$1
+    while [ $maxlvl -gt 0 ]; do
+	dir="../$dir"
+	maxlvl=$(($maxlvl - 1));
+	if [ -d "$dir" ]; then
+	    cd $dir >&/dev/null
+	fi
+    done
+}
+
+
