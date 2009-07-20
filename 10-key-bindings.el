@@ -65,3 +65,10 @@
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 
+(defun klang/org-mode-init ()
+  "ajust some key bindings in org-mode"
+  ; by default bound to 'org-force-cycle-archived, which is anoying
+  (define-key org-mode-map [(control tab)] t)
+  )
+
+(add-hook 'org-mode-hook 'klang/org-mode-init)

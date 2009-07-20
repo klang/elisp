@@ -1,11 +1,11 @@
 ;; Customizations for all of c-mode, c++-mode, and objc-mode
-(defun my-php-mode-customizations ()
-  ;; other customizations
-  (setq tab-width 2
-	c-basic-offset 2
-	c-set-style "awk"
-        ;; this will make sure spaces are used instead of tabs
-	indent-tabs-mode nil)
+(defun klang/php-mode-init ()
+  "Set some buffer-local variables."
+  ;; other customizations (cc-styles.el)
+  (c-set-style "awk")
+  (setq tab-width 2)
+  ;; this will make sure spaces are used instead of tabs
+  (set 'indent-tabs-mode nil)
   ;; we like auto-newline and hungry-delete
   (c-toggle-auto-hungry-state 1)
   ;; keybindings for all supported languages.  We can put these in
@@ -14,10 +14,52 @@
   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
   (define-key c-mode-base-map ";" 'self-insert-command)
   (define-key c-mode-base-map "," 'self-insert-command)
-  )
+  
+  (setq case-fold-search t)
+  (setq c-basic-offset 2)
+  (c-set-offset 'arglist-cont 0)
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'case-label 2)
+  (c-set-offset 'arglist-close 0))
 
+(defconst klang-php-style 
+  '((c-basic-offset . 2)
+    (c-comment-only-line-offset . 0)
+    (c-hanging-braces-alist
+     (defun-open after)
+     (defun-close . c-snug-1line-defun-close)
+     (substatement-open after)
+     (block-close . c-snug-do-while))
+    (c-hanging-semi&comma-criteria)
+    (c-cleanup-list)
+    (c-offsets-alist
+     (statement-block-intro . +)
+     (substatement-open . 0)
+     (statement-cont . +))) 
+  "AWK style with differnet basic offset")
+
+
+;; (defun my-php-mode-customizations ()
+;;   ;; other customizations (cc-styles.el)
+;;   (setq c-set-style "awk"
+;;         tab-width 2
+;;         c-basic-offset 2
+;;         ;; this will make sure spaces are used instead of tabs
+;;         indent-tabs-mode nil)
+;;   ;; we like auto-newline and hungry-delete
+;;   (c-toggle-auto-hungry-state 1)
+;;   ;; keybindings for all supported languages.  We can put these in
+;;   ;; c-mode-base-map because c-mode-map, c++-mode-map, objc-mode-map,
+;;   ;; java-mode-map, and idl-mode-map inherit from it.
+;;   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
+;;   (define-key c-mode-base-map ";" 'self-insert-command)
+;;   (define-key c-mode-base-map "," 'self-insert-command)
+;;   )
+
+;; (add-hook 'php-mode-hook 'my-php-mode-customizations)
+;(add-hook 'php-mode-hook 'klang/php-mode-init)
 (require 'php-mode)
-(add-hook 'php-mode-hook 'my-php-mode-customizations)
+
 
 ;(add-hook 'php-mode-hook
 ;	  '(lambda () (define-abbrev php-mode-abbrev-table "ex" "extends")))
