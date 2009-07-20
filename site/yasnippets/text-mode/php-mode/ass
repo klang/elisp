@@ -1,0 +1,4 @@
+#name : $this->assertTrue(..,..);
+# --
+$this->assertTrue(\$${1:SomethingTrue}, "${2:errormessage}");
+$0

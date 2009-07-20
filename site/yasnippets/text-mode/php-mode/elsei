@@ -1,0 +1,4 @@
+#name : } elseif () { ...
+# --
+} elseif ($1) {
+  $0
