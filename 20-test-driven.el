@@ -87,6 +87,7 @@ name-test.ext   -> name.ext otherwise"
 (defun td-other-file-other-window ()
   "td-other-file in other-window"
   (interactive)
+  (delete-other-windows)
   (split-window)
   (td-other-file))
 
