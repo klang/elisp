@@ -1,0 +1,4 @@
+#name : $this->fail(..);
+# --
+$this->fail("${1:errormessage}");
+$0

@@ -1,0 +1,4 @@
+#name : $this->pass(..);
+# --
+$this->pass("${1:successmessage}");
+$0
