@@ -38,6 +38,14 @@
 (global-set-key "\C-xi" 'insert-file)
 
 (global-set-key [f9] '(lambda () (interactive) (save-buffer) (server-edit)) )
+(defun my-done ()
+  (interactive)
+  (server-edit)
+  (make-frame-invisible nil t))
+(global-set-key (kbd "C-x C-c") 'my-done)
+(global-set-key [f9] '(lambda () (interactive) (save-buffer) (my-done)))
+
+
 (global-set-key [C-f11] 'dos2unix)
 (global-set-key [(f8)] 'narrow-to-function)
 (global-set-key [(S-f8)] 'widen)
