@@ -1,5 +1,6 @@
 ;;; Make the startup message disseapear
 (setq inhibit-startup-message t) ; i know this by heart
+(setq initial-scratch-message nil)
 
 ;;; Make the modeline hold line and coloumn number
 (line-number-mode t) ; make line numbers in mode-line
