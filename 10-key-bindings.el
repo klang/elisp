@@ -74,9 +74,22 @@
 (define-key global-map "\C-ca" 'org-agenda)
 
 (defun klang/org-mode-init ()
-  "ajust some key bindings in org-mode"
+  "adjust some key bindings in org-mode"
   ; by default bound to 'org-force-cycle-archived, which is anoying
   (define-key org-mode-map [(control tab)] t)
   )
 
 (add-hook 'org-mode-hook 'klang/org-mode-init)
+
+;; http://steve.yegge.googlepages.com/effective-emacs
+;1: Swap Caps-Lock and Control
+
+; 2: Invoke M-x without the Alt key
+;(global-set-key "\C-x\C-m" 'execute-extended-command)
+;(global-set-key "\C-c\C-m" 'execute-extended-command)
+
+; 3: Prefer backward-kill-word over Backspace
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+

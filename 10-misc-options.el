@@ -48,3 +48,6 @@
 (require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/elisp/site/yasnippets")
+
+;;(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "cedet/srecode")))
+;;(require 'srecode-load)
