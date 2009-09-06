@@ -17,18 +17,18 @@
 
 ;; git clone git://github.com/technomancy/clojure-mode.git
 (setq swank-clojure-extra-classpaths
-;;			(append
+			(append
        (cons (concat clojure-src-root "/swank-clojure/")
      	    (when (file-directory-p "~/.clojure")
      	      (directory-files "~/.clojure" t ".jar$")))
-;;  			 (list
-;;  				(concat clojure-src-root "/Clogger/src/") 
-;; 				(concat clojure-src-root "/Clogger/src/site/") 
-;;  				(concat clojure-src-root "/compojure/compojure.jar"))
-;; 			 (directory-files 
-;; 				(concat clojure-src-root "/compojure/deps") t "\.jar$")
-;; 			 (directory-files "~/java/lib" t "\.jar$")
-;; 			 )
+  			 (list
+  				(concat clojure-src-root "/Clogger/src/") 
+ 				(concat clojure-src-root "/Clogger/src/site/") 
+  				(concat clojure-src-root "/compojure/compojure.jar"))
+ 			 (directory-files 
+ 				(concat clojure-src-root "/compojure/deps") t "\.jar$")
+ 			 (directory-files "~/java/lib" t "\.jar$")
+ 			 )
 			)
 
 ;; in clojure
@@ -53,14 +53,14 @@
     (eval-after-load 'clojure-mode '(clojure-slime-config))
 
 	;; change the clojure.jar we use, so it matches the compojure.jar
-;;   (swank-clojure-config
-;;    (setq swank-clojure-jar-path 
-;; 	 (concat clojure-src-root "/compojure/deps/clojure.jar"))
-;;    (setq swank-clojure-extra-classpaths
-;; 	 (cons 
-;; 	  (concat clojure-src-root "/compojure/compojure.jar")
-;; 	  (directory-files 
-;; 	   (concat clojure-src-root "/compojure/deps") "\.jar$"))))
+	(swank-clojure-config
+	 (setq swank-clojure-jar-path 
+				 (concat clojure-src-root "/compojure/deps/clojure.jar"))
+	 (setq swank-clojure-extra-classpaths
+				 (cons 
+					(concat clojure-src-root "/compojure/compojure.jar")
+					(directory-files 
+					 (concat clojure-src-root "/compojure/deps") "\.jar$"))))
   )
 
 ;; (System/getProperty "java.class.path")
