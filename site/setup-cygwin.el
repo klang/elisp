@@ -4,20 +4,19 @@
 ;; Description:
 ;; Author: Markus Hoenika
 ;; Maintainer: Drew Adams
-;; Copyright (C) 2004-2007, Drew Adams, all rights reserved.
+;; Copyright (C) 2004-2009, Drew Adams, all rights reserved.
 ;; Created: Thu Jan 15 11:13:38 2004
 ;; Version: 21.0
-;; Last-Updated: Fri Jan 19 21:23:03 2007 (-28800 Pacific Standard Time)
+;; Last-Updated: Sat Aug  1 15:41:38 2009 (-0700)
 ;;           By: dradams
-;;     Update #: 68
+;;     Update #: 86
 ;; URL: http://www.emacswiki.org/cgi-bin/wiki/setup-cygwin.el
 ;; Keywords: os, unix, cygwin
-;; Compatibility: GNU Emacs 20.x, GNU Emacs 21.x, GNU Emacs 22.x
+;; Compatibility: GNU Emacs: 20.x, 21.x, 22.x, 23.x
 ;;
 ;; Features that might be required by this library:
 ;;
-;;   `ange-ftp', `backquote', `cl', `comint', `cygwin-mount',
-;;   `executable', `ring'.
+;;   `ange-ftp', `backquote', `comint', `cygwin-mount', `ring'.
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -30,6 +29,8 @@
 ;;
 ;;; Change log:
 ;;
+;; 2007/12/08 dadams
+;;     Use absolute file name for shell-file-name.
 ;; 2006/11/16 dadams
 ;;     Replace add-to-list by setq, for Emacs -q prior to Emacs 21.
 ;; 2006/08/14 dadams
@@ -66,7 +67,6 @@
 ;;; Make Cygwin paths accessible
 (cygwin-mount-activate)
 
-
 ;;; Follow Cygwin symlinks.
 ;;; Handles old-style (text file) symlinks and new-style (.lnk file) symlinks.
 ;;; (Non-Cygwin-symlink .lnk files, such as desktop shortcuts, are still loaded as such.)
@@ -101,13 +101,13 @@ loaded as such.)"
 
 ;;; Use `bash' as the default shell in Emacs.
 (setq exec-path (cons "C:/cygwin/bin" exec-path))
-(setq shell-file-name "bash")           ; Subprocesses invoked via the shell.
+(setq shell-file-name "C:/cygwin/bin/bash.exe") ; Subprocesses invoked via the shell.
 (setenv "SHELL" shell-file-name)
 (setenv "PATH" (concat (getenv "PATH") ";C:\\cygwin\\bin"))
 (setq explicit-shell-file-name shell-file-name) ; Interactive shell
 (setq explicit-shell-args '("--login" "-i"))
 ;;;;; (setq shell-command-switch "-ic") ; SHOULD THIS BE "-c" or "-ic"?
-(setq w32-quote-process-args ?\") ;;@@@ IS THIS BETTER? ;@@@ WAS THIS BEFORE: (setq w32-quote-process-args t)
+(setq w32-quote-process-args ?\") ;; " @@@ IS THIS BETTER? ;@@@ WAS THIS BEFORE: (setq w32-quote-process-args t)
 
 ;; These don't seem to be needed.
 ;; They were recommended by http://www.khngai.com/emacs/cygwin.php
@@ -143,7 +143,7 @@ loaded as such.)"
   (setq explicit-shell-file-name "bash")
   (setenv "SHELL" explicit-shell-file-name)
   ;;;;;(setq explicit-sh-args '("-login" "-i")) ; Undefined?
-  (setq w32-quote-process-args ?\")
+  (setq w32-quote-process-args ?\") ;; "
   ;;;;;(setq mswindows-quote-process-args t)) ; Undefined?
   )
 
@@ -155,7 +155,6 @@ loaded as such.)"
   (setenv "SHELL" explicit-shell-file-name)
   ;;;;;(setq explicit-sh-args nil)           ; Undefined?
   (setq w32-quote-process-args nil))
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 
