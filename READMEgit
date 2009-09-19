@@ -1,0 +1,15 @@
+# add private ssh key to ~/.ssh/config
+
+#Host github.com
+#     User git
+#     Hostname github.com
+#     IdentityFile feersum-endjinn_1024_dsa 
+
+git clone git://github.com/klang/elisp.git
+git remote rm origin
+git remote add origin git@github.com:klang/elisp.git
+git push origin master
+
+# or simply clone with
+
+git clone git@github.com:klang/elisp.git
