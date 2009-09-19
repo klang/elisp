@@ -1,0 +1,14 @@
+! make Caps_Lock another Control_R key
+!
+!remove Lock = Caps_Lock
+!keysym Caps_Lock = Control_R
+!add Lock = Caps_Lock
+
+! Make Caps_Lock another Ctrl key
+! System->Preferences->Keyboard->Layout->Layout-Options
+! probably ending up in .gconfd/saved_state
+
+! Alt+Space should not "Activate the window menu"
+! System->Preferences->Keyboard-Shortcuts->Window Management->Activate the window menu
+
+
