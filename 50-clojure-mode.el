@@ -17,7 +17,7 @@
   (setenv "ANT_HOME" "~/tools/apache-ant-1.7.1")
   (setenv "PATH" (concat (getenv "ANT_HOME") "/bin;"
 			 (getenv "JAVA_HOME") "/bin;"
-			 (getenv "PATH"))))
+			 (getenv "PATH")))
 
   (setq clojure-src-root "~/lisp/clj")
 
