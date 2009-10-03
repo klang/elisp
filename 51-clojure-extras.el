@@ -21,6 +21,7 @@ point."
 (add-hook 'sh-mode-hook         'my-tab-fix)
 (add-hook 'emacs-lisp-mode-hook 'my-tab-fix)
 (add-hook 'clojure-mode-hook    'my-tab-fix)
+(add-hook 'slime-connected-hook 'slime-redirect-inferior-output)
 
 ;;; 
 
@@ -28,12 +29,15 @@ point."
 (ido-mode t)
 (include 'dominating-file) ; http://github.com/technomancy/emacs-starter-kit
 
+
 (defun prg-clojure nil
   "Start project with classpath for Programming Clojure by Stuart Halloway"
   (interactive)
   ;; swank-clojure-project could also be used, this version includes . in
   ;; classpath though, which is needed to (use 'examples.introduction)
-  (clojure-project "~/wrk-clojure/tutorials/programming-clojure"))
+  (clojure-project "~/wrk-clojure/tutorials/programming-clojure")
+  ;; M-x slime-redirect-inferior-output
+  )
 
 
 (defun clojure-project (path)
