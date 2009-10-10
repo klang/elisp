@@ -17,7 +17,7 @@ point."
   (local-set-key [tab] 'indent-or-expand))
  
 ;; add hooks for modes you want to use the tab completion for:
-(add-hook 'c-mode-hook          'my-tab-fix)
+;;(add-hook 'c-mode-hook          'my-tab-fix)
 (add-hook 'sh-mode-hook         'my-tab-fix)
 (add-hook 'emacs-lisp-mode-hook 'my-tab-fix)
 (add-hook 'clojure-mode-hook    'my-tab-fix)
@@ -26,7 +26,7 @@ point."
 ;;; 
 
 (require 'ido)
-(ido-mode t)
+(ido-mode nil)
 (include 'dominating-file) ; http://github.com/technomancy/emacs-starter-kit
 
 
