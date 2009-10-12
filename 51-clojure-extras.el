@@ -67,3 +67,9 @@ point."
 			 slime-lisp-implementations)))
   (save-window-excursion
     (slime)))
+
+(autoload 'paredit-mode "paredit"
+  "Minor mode for pseudo-structurally editing Lisp code." 
+  t)
+
+(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
