@@ -33,9 +33,16 @@ point."
 (defun prg-clojure nil
   "Start project with classpath for Programming Clojure by Stuart Halloway"
   (interactive)
+  ;; setting default directory, will include it in classpath
+  ;; (def mkdir-task (org.apache.tools.ant.taskdefs.Mkdir.))
+  ;; (.setDir mkdir-task (java.io.File. "sample-dir"))
+  ;; (.execute mkdir-task)
+  ;; will create a directory in 'default-directory
+  (setq default-directory "~/wrk-clojure/tutorials/programming-clojure/")
+
   ;; swank-clojure-project could also be used, this version includes . in
   ;; classpath though, which is needed to (use 'examples.introduction)
-  (clojure-project "~/wrk-clojure/tutorials/programming-clojure")
+  (clojure-project default-directory)
   ;; M-x slime-redirect-inferior-output
   )
 
