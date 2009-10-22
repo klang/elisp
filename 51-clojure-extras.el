@@ -50,10 +50,13 @@ point."
   "Start custom project"
   (interactive)
   (setq default-directory "~/wrk-clojure/snippets/")
-  (clojure-project default-directory)
-  ;; M-x slime-redirect-inferior-output
-  )
+  (clojure-project default-directory))
 
+(defun prg-clojure-journal-server nil
+  "Start custom project"
+  (interactive)
+  (setq default-directory "~/wrk-clojure/projects/journal-server/")
+  (clojure-project default-directory))
 
 (defun clojure-project (path)
   "Setup classpaths for a clojure project and starts a new SLIME session.
