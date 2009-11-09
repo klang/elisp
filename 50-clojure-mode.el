@@ -6,7 +6,7 @@
 			 (getenv "PATH"))))
 
 (when (eq system-type 'gnu/linux)
-  (setenv "JAVA_HOME" "/usr/lib/jvm/java-6-sun-1.6.0.16"))
+  (setenv "JAVA_HOME" ""));"/usr/lib/jvm/java-6-sun-1.6.0.16"))
 
 (when (or (eq system-type 'gnu/linux)
 	  (eq system-type 'windows-nt))
