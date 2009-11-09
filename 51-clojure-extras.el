@@ -58,6 +58,12 @@ point."
   (setq default-directory "~/wrk-clojure/projects/journal-server/")
   (clojure-project default-directory))
 
+(defun prg-compojure-org nil
+  "compojure-org service"
+  (interactive)
+  (setq default-directory "~/wrk-clojure/projects/compojure.org/")
+  (clojure-project default-directory))
+
 (defun clojure-project (path)
   "Setup classpaths for a clojure project and starts a new SLIME session.
      Kills existing SLIME session, if any."
