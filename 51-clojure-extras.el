@@ -49,7 +49,7 @@ point."
 (defun prg-clojure-snippets nil
   "Start custom project"
   (interactive)
-  (setq default-directory "~/wrk-clojure/snippets/")
+  (setq default-directory "~/wrk-clojure/projects/snippets/")
   (clojure-project default-directory))
 
 (defun prg-clojure-journal-server nil
