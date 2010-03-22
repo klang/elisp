@@ -1,0 +1,4 @@
+#name : print"<pre>";print_r( .. );print"</pre>";
+# --
+print"<pre>".__FUNCTION__.":$1:\\n".print_r(\$${1:var}, true)."</pre>";
+$0
