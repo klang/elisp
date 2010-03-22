@@ -49,3 +49,11 @@
       ;;(setq paren-match-face (quote paren-face-match-normal))
       (setq paren-sexp-mode t)
       ))
+
+(if (include 'paredit)
+    (defun paredit-space-for-delimiter-p (endp delimiter)
+      (and (not (if endp (eobp) (bobp)))
+       (memq (char-syntax (if endp (char-after) (char-before)))
+             (list ?\"  ;; REMOVED ?w ?_
+                   (let ((matching (matching-paren delimiter)))
+                     (and matching (char-syntax matching))))))))
