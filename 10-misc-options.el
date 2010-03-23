@@ -44,8 +44,8 @@
 (setq iswitchb-buffer-ignore '("^ " "^*"))
 
 ;;; http://code.google.com/p/yasnippet/
-(add-to-list 'load-path "~/elisp/site/yasnippet-0.5.7")
-(require 'yasnippet) ;; not yasnippet-bundle
+;(add-to-list 'load-path "~/elisp/site/yasnippet-0.5.7")
+;(require 'yasnippet) ;; not yasnippet-bundle
 (yas/initialize)
 (yas/load-directory "~/elisp/site/yasnippets")
 
