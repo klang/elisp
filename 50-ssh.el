@@ -4,6 +4,7 @@
   ;; for emacs running on citrix, cygwin is installed somewhere else
   (setenv "PATH" (concat "c:/cygwin/bin;" (getenv "PATH")))
   (setenv "PATH" (concat "~/bin;" (getenv "PATH")))
+  (setenv "CYGWIN" "nodosfilewarning")
   (setq exec-path (cons "c:/cygwin/bin/" exec-path))
   (setq exec-path (cons "~/bin" exec-path))
   (setq tramp-default-method "plink")
