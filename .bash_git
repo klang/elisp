@@ -23,6 +23,7 @@ git_prompt() {
   fi
 }
 export PS1="\u@\h:\w $(git_prompt)$ "
+export PS1="[$CVSUSER@$COMPUTER \W $(git_prompt)]\\$ "
 
 # A fancy colorful prompt
 function color_prompt
