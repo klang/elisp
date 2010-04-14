@@ -1,3 +1,5 @@
+# http://0xfe.blogspot.com/2010/04/adding-git-status-information-to-your.html
+
 # Returns "*" if the current git branch is dirty.
 function parse_git_dirty {
   [[ $(git diff --shortstat 2> /dev/null | tail -n1) != "" ]] && echo "*"
