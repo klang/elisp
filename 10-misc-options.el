@@ -46,8 +46,9 @@
 ;;; http://code.google.com/p/yasnippet/
 ;(add-to-list 'load-path "~/elisp/site/yasnippet-0.5.7")
 ;(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory "~/elisp/site/yasnippets")
+(if (fboundp 'yas/initialize) 
+ (progn (yas/initialize)
+	(yas/load-directory "~/elisp/site/yasnippets")))
 
 ;;(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "cedet/srecode")))
 ;;(require 'srecode-load)
