@@ -52,3 +52,6 @@
 
 ;;(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "cedet/srecode")))
 ;;(require 'srecode-load)
+
+(require 'ido)
+(ido-mode t)
