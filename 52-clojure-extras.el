@@ -21,6 +21,7 @@ point."
 (autoload 'paredit-mode "paredit")
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
 (add-hook 'slime-connected-hook (lambda () (paredit-mode +1)))
+(add-hook 'elisp-mode-hook (lambda () (paredit-mode +1)))
 (setq slime-protocol-version 'ignore)
 
 ;;;

@@ -31,10 +31,10 @@
 ;; now, I could just have written _that_, but where is the fun?
 ;; Karsten Lang Pedersen, karsten@lang.dk, 20080806 .. trying to learn lisp
 
-(defvar extsion-to-executer-bindings ())
-(add-to-list 'extsion-to-executer-bindings '("pl" . "perl"))
-(add-to-list 'extsion-to-executer-bindings '("php" . "php -f"))
-(add-to-list 'extsion-to-executer-bindings '("sh" . "bash"))
+(defvar extention-to-executer-bindings ())
+(add-to-list 'extention-to-executer-bindings '("pl" . "perl"))
+(add-to-list 'extention-to-executer-bindings '("php" . "php -f"))
+(add-to-list 'extention-to-executer-bindings '("sh" . "bash"))
 
 ;; -> maybe finding that binding in the first line of the buffer would be an idea?
 ;;    (that strategy does not work consistently for php, though.)
@@ -45,7 +45,7 @@
 (defun lookup-executer (ext) 
    "find appropriate executer for script"
    (interactive)
-   (cdr (assoc ext extsion-to-executer-bindings )) )
+   (cdr (assoc ext extention-to-executer-bindings )) )
 
 (defun execute-buffer-script ()
   "executes the script in the current buffer"
