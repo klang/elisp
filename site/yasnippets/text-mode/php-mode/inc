@@ -1,0 +1,4 @@
+#name : get_included_files
+# --
+<pre><?=print_r(get_included_files(),true)?></pre>
+$0

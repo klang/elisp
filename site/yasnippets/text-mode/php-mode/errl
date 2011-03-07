@@ -1,0 +1,4 @@
+#name : error_log(__CLASS__."::".__FUNCTION__,0);
+# --
+error_log(__CLASS__."::".__FUNCTION__,0);
+$0

@@ -1,6 +1,6 @@
 #name : foreach ... { ... }
 # --
 // whilee will perform better
-foreach (\$${1:array} as \$${2:key} => \$${3:value}) {
+foreach ((array)\$${1:array} as \$${2:key} => \$${3:value}) {
   $0
 }
