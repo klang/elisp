@@ -19,8 +19,8 @@
   (or
    (getenv "EMACS_STARTUP_LOAD_DIR")
    (cond
-    ((file-directory-p "~/elisp")
-     "~/elisp")
+    ((file-directory-p "~/.emacs.d/elisp")
+     "~/.emacs.d/elisp")
     (t
      (message "You have copied the .emacs from '/usr/lib/emacs/elisp', Plase make sure you understand what the implications of that is!")
      (sleep-for 2)
@@ -42,13 +42,13 @@
 (add-to-list 'load-path emacs-startup-load-dir)
 (add-to-list 'load-path (concat emacs-startup-load-dir "/site/"))
 
-(load-elisp-files "~/elisp")
+(load-elisp-files (concat dotfiles-dir "elisp"))
 
 (defun elisp-update ()
  "Update elisp."
  (interactive)
  (message "Updating...")
- (let ((repo "~/elisp"))
+ (let ((repo "~/.emacs.d/elisp"))
    (unless (= 0 (shell-command (format "cd %s; git pull origin master" repo)))
      (error "elisp update failed: %s" repo))))
 

@@ -1,3 +1,7 @@
+(if (boundp 'user-specific-dir)
+    (add-to-list 'load-path (concat user-specific-dir "/site"))
+  (add-to-list 'load-path (concat emacs-startup-load-dir "/site/")))
+
 (defun include (feature &optional file-name)
   "Conditional include, like (require), but doesn't  (error) when the file's not there.
 
