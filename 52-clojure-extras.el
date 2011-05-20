@@ -54,6 +54,13 @@ point."
 (define-key slime-override-map [delete] 'paredit-forward-delete)
 (define-key slime-override-map [backspace] 'paredit-backward-delete)
 ;;(define-key slime-override-map "\C-j" 'slime-repl-return)
+(define-key slime-override-map (kbd "æ") 'paredit-open-round)
+(define-key slime-override-map (kbd "ø") 'paredit-open-square)
+(define-key slime-override-map (kbd "å") 'paredit-open-curly)
+(define-key slime-override-map (kbd "Æ") 'paredit-close-round)
+(define-key slime-override-map (kbd "Ø") 'paredit-close-square)
+(define-key slime-override-map (kbd "Å") 'paredit-close-curly)
+;; 
 
 (add-hook 'slime-repl-mode-hook (lambda ()
                                   (slime-override-mode t)
