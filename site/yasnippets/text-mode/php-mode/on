@@ -1,0 +1,4 @@
+#name : print"<pre>unit-test ON: function-name</pre>";
+# --
+print"<pre>unit-test ON: ".__FUNCTION__."</pre>";
+$0
