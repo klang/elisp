@@ -48,6 +48,7 @@ point."
 (define-minor-mode slime-override-mode
   "Fix SLIME REPL keybindings"
   nil " SLIME-override" slime-override-map)
+
 (define-key slime-override-map (kbd "<C-return>") 'paredit-newline)
 (define-key slime-override-map (kbd "{") 'paredit-open-curly)
 (define-key slime-override-map (kbd "}") 'paredit-close-curly)
@@ -61,14 +62,16 @@ point."
 (define-key slime-override-map (kbd "Ø") 'paredit-close-square)
 (define-key slime-override-map (kbd "Å") 'paredit-close-curly)
 ;; 
+(add-hook 'clojure-mode-hook    (lambda () (slime-override-mode t)))
 
-(add-hook 'slime-repl-mode-hook (lambda ()
-                                  (slime-override-mode t)
-                                  (slime-redirect-inferior-output)
-                                  (modify-syntax-entry ?\[ "(]")
-                                  (modify-syntax-entry ?\] ")[")
-                                  (modify-syntax-entry ?\{ "(}")
-                                  (modify-syntax-entry ?\} "){")))
+(add-hook 'slime-repl-mode-hook 
+	  (lambda ()
+	    (slime-override-mode t)
+	    (slime-redirect-inferior-output)
+	    (modify-syntax-entry ?\[ "(]")
+	    (modify-syntax-entry ?\] ")[")
+	    (modify-syntax-entry ?\{ "(}")
+	    (modify-syntax-entry ?\} "){")))
 
 (set-language-environment "UTF-8")
 (setq slime-net-coding-system 'utf-8-unix)

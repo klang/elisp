@@ -16,7 +16,7 @@
 (defclojureface clojure-namespace    "#c476f1"   "Clojure namespace")
 (defclojureface clojure-java-call    "#4bcf68"   "Clojure Java calls")
 (defclojureface clojure-special      "#b8bb00"   "Clojure special")
-(defclojureface clojure-double-quote "#b8bb00"   "Clojure special" (:background "unspecified"))
+(defclojureface clojure-double-quote "#b8bb00"   "Clojure special")
 
 (defun tweak-clojure-syntax ()
   (mapcar (lambda (x) (font-lock-add-keywords nil x))
