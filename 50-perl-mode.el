@@ -15,7 +15,7 @@
   (interactive)
   (setq perl-indent-level 2)
   (setq perl-continued-statement-offset 2)
-  (setq perl-continued-brace-offset 0)
+  (setq perl-continued-brace-offset -2)
   (setq perl-brace-offset 0)
   (setq perl-brace-imaginary-offset 0)
   (setq perl-label-offset -2)

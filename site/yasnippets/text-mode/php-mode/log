@@ -1,0 +1,4 @@
+#name : error_log(__CLASS__."::".__FUNCTION__,0);
+# --
+error_log(date('Ymd-His'). ' '.${4:__CLASS__.}${3:':'. __FUNCTION__.}' $1: '.print_r(\$${1:var},true)."\n",3,$_SERVER['LOGDIR'].'/${2:debug}.log');
+$0

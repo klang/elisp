@@ -1,0 +1,4 @@
+#name : error_log(__CLASS__."::".__FUNCTION__."var",3,logdir);
+# --
+error_log(date('Ymd-His').__CLASS__."::".__FUNCTION__."::$1:\\n".print_r(\$${1:var}, true)."\n",3,$_SERVER['LOGDIR'].'/$2.log');
+$0

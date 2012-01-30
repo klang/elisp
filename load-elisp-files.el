@@ -1,3 +1,4 @@
+
 ;;; Wrapper to make .emacs self-compiling.
 ;; http://www.postulate.org/emacs.php
 (defun byte-compile-if-needed (file)

@@ -1,0 +1,1 @@
+(add-to-list 'load-path (concat emacs-startup-load-dir "/site/jabber/"))

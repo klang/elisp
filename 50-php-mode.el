@@ -14,7 +14,8 @@
   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
   (define-key c-mode-base-map ";" 'self-insert-command)
   (define-key c-mode-base-map "," 'self-insert-command)
-  
+  (define-key php-mode-map [tab] 'yas/expand)
+
   (setq case-fold-search t)
   (setq c-basic-offset 2)
   (c-set-offset 'arglist-cont 0)
@@ -57,7 +58,9 @@
 ;;   )
 
 ;; (add-hook 'php-mode-hook 'my-php-mode-customizations)
-;(add-hook 'php-mode-hook 'klang/php-mode-init)
+(add-hook 'php-mode-hook 'klang/php-mode-init)
+(require 'autopair)
+(add-hook 'php-mode-hook #'(lambda () (autopair-mode)))
 (require 'php-mode)
 
 
