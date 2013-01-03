@@ -73,6 +73,16 @@ point."
 	    (modify-syntax-entry ?\{ "(}")
 	    (modify-syntax-entry ?\} "){")))
 
+(add-hook 'nrepl-mode-hook 
+	  (lambda ()
+	    (slime-override-mode t)
+	    (modify-syntax-entry ?\[ "(]")
+	    (modify-syntax-entry ?\] ")[")
+	    (modify-syntax-entry ?\{ "(}")
+	    (modify-syntax-entry ?\} "){")))
+
 (set-language-environment "UTF-8")
 (setq slime-net-coding-system 'utf-8-unix)
 (add-hook 'slime-connected-hook 'slime-redirect-inferior-output)
+
+

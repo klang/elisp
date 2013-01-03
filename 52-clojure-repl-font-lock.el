@@ -39,6 +39,11 @@
 (add-hook 'slime-repl-mode-hook 
 	  (lambda () (paredit-mode t)))
 
+(add-hook 'nrepl-mode-hook 
+	  (lambda () (clojure-font-lock-setup)))
+(add-hook 'nrepl-mode-hook 
+	  (lambda () (paredit-mode t)))
+
 (defadvice slime-repl-emit (after sr-emit-ad activate)
   (with-current-buffer (slime-output-buffer)
     (add-text-properties slime-output-start slime-output-end
