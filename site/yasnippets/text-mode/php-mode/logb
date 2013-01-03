@@ -1,0 +1,7 @@
+#name : error_log(__CLASS__."::".__FUNCTION__,0);
+# --
+$__b = debug_backtrace();
+error_log(date('Ymd-His'). ' '.__CLASS__.':'. __FUNCTION__.' by '.$__b[1]['function']."\n",3,$_SERVER['LOGDIR'].'/debug.log');
+
+
+$0

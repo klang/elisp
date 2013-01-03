@@ -1,3 +1,4 @@
+
 (defun indent-or-expand (arg)
   "Either indent according to mode, or expand the word preceding
 point."
@@ -16,7 +17,7 @@ point."
 (add-hook 'sh-mode-hook         'my-tab-fix)
 (add-hook 'emacs-lisp-mode-hook 'my-tab-fix)
 (add-hook 'clojure-mode-hook    'my-tab-fix)
-(add-hook 'slime-connected-hook 'slime-redirect-inferior-output)
+;;(add-hook 'slime-connected-hook 'slime-redirect-inferior-output)
 
 (autoload 'paredit-mode "paredit")
 (add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
@@ -62,16 +63,17 @@ point."
 (define-key slime-override-map (kbd "Ø") 'paredit-close-square)
 (define-key slime-override-map (kbd "Å") 'paredit-close-curly)
 ;; 
-(add-hook 'clojure-mode-hook    (lambda () (slime-override-mode t)))
+(defun clojure-mode-slime-font-lock ()
+            (let (font-lock-mode)
+              (clojure-mode-font-lock-setup)
+	      (slime-override-mode t)
+	      (modify-syntax-entry ?\[ "(]")
+	      (modify-syntax-entry ?\] ")[")
+	      (modify-syntax-entry ?\{ "(}")
+	      (modify-syntax-entry ?\} "){")))
 
-(add-hook 'slime-repl-mode-hook 
-	  (lambda ()
-	    (slime-override-mode t)
-	    (slime-redirect-inferior-output)
-	    (modify-syntax-entry ?\[ "(]")
-	    (modify-syntax-entry ?\] ")[")
-	    (modify-syntax-entry ?\{ "(}")
-	    (modify-syntax-entry ?\} "){")))
+(add-hook 'slime-repl-mode-hook 'clojure-mode-slime-font-lock)
+(add-hook 'clojure-mode-hook 'clojure-mode-slime-font-lock)
 
 (add-hook 'nrepl-mode-hook 
 	  (lambda ()
@@ -83,6 +85,5 @@ point."
 
 (set-language-environment "UTF-8")
 (setq slime-net-coding-system 'utf-8-unix)
+
 (add-hook 'slime-connected-hook 'slime-redirect-inferior-output)
-
-

@@ -29,6 +29,7 @@
             (("(\\(\\.[^ \n)]*\\|[^ \n)]+\\.\\|new\\)\\([ )\n]\\|$\\)" 1 'clojure-java-call))
             )))
 
+(add-hook 'slime-repl-mode-hook 'tweak-clojure-syntax)
 (add-hook 'clojure-mode-hook 'tweak-clojure-syntax)
 
 (custom-set-faces
