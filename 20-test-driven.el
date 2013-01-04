@@ -94,3 +94,55 @@ name-test.ext   -> name.ext otherwise"
 (global-set-key [f7] 'td-other-file)
 (global-set-key "\C-xt" 'td-other-file)
 (global-set-key "\C-x5t" 'td-other-file-other-window)
+
+;;; -- new and compact way to do the same
+
+(defun td-toggle-related (file to from)
+  "toggles between file.from.ext and file.to.ext"
+  (let ((to-from (replace-regexp-in-string to from file)) 
+        (from-to (replace-regexp-in-string from to file)))
+    (if (equal file to-from) from-to to-from)))
+
+(defun td-toggle-model-view (&optional file)
+  "opens related file"
+  (interactive)
+  (or file (setq file (buffer-name)))
+  (let ((target (td-toggle-related file ".model.php" ".view.html.php")))
+    (if (get-buffer target) 
+	(switch-to-buffer target) 
+      (find-file target))))
+
+(defun td-toggle-model-test (&optional file)
+  "opens related file"
+  (interactive)
+  (or file (setq file (buffer-name)))
+  (let ((target (td-toggle-related file ".model.php" ".model-test.php")))
+    (if (get-buffer target) 
+	(switch-to-buffer target) 
+      (find-file target))))
+
+(defun td-related-file-other-window (target)
+  "td-other-file in other-window"
+  (delete-other-windows)
+  (split-window)
+  (funcall target))
+
+(defun td-model-view-other-window ()
+ "open in a different window"
+ (interactive)
+ (delete-other-windows)
+ (split-window)
+ (td-toggle-model-view))
+
+(defun td-model-test-other-window ()
+ "open in a different window"
+ (interactive)
+ (delete-other-windows)
+ (split-window)
+ (td-toggle-model-test))
+
+;;(global-set-key "\C-x5r" 'td-model-view-other-window)
+;;(global-set-key "\C-x5t" 'td-model-test-other-window)
+
+;;(global-set-key "\C-xr" 'td-toggle-model-view)
+;;(global-set-key "\C-xt" 'td-toggle-model-test)

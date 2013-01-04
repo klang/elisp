@@ -44,6 +44,9 @@
 (add-hook 'nrepl-mode-hook 
 	  (lambda () (paredit-mode t)))
 
+;;(add-hook 'nrepl-mode-hook 'turn-on-font-lock)
+(add-hook 'nrepl-mode-hook (lambda () (font-lock-mode) (font-lock-mode)))
+
 (defadvice slime-repl-emit (after sr-emit-ad activate)
   (with-current-buffer (slime-output-buffer)
     (add-text-properties slime-output-start slime-output-end

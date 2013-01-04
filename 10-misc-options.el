@@ -55,3 +55,6 @@
 
 (require 'ido)
 (ido-mode t)
+
+;; mouse selection immediately injected to the kill ring
+(setq mouse-drag-copy-region t)
