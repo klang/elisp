@@ -8,10 +8,9 @@
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "elisp"))
 
-;;git clone git://GitHub.com/technomancy/package.el
-(add-to-list 'load-path (concat dotfiles-dir "package.el"))
-
 (require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; make sure that emacs saves custom variables somewhere else than in .emacs

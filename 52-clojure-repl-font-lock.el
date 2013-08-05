@@ -41,12 +41,17 @@
 
 (add-hook 'nrepl-mode-hook 
 	  (lambda () (clojure-font-lock-setup)))
-(add-hook 'nrepl-mode-hook 
-	  (lambda () (paredit-mode t)))
 
+;; both these screw up the prompt in the repl
+;;(add-hook 'nrepl-mode-hook 
+;;	  (lambda () (paredit-mode t)))
+;;(add-hook 'nrepl-mode-hook 'paredit-mode)
+
+(setq nrepl-popup-stacktraces nil)
 (add-hook 'nrepl-mode-hook 'turn-on-font-lock)
 
-(add-hook 'nrepl-interaction-mode 'paredit-mode)
+;; this screws up with the emacs-lisp mode
+;; (add-hook 'nrepl-interaction-mode 'paredit-mode)
 
 (defadvice slime-repl-emit (after sr-emit-ad activate)
   (with-current-buffer (slime-output-buffer)

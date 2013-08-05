@@ -18,7 +18,9 @@
   (my-color-theme-normal)
   )
 
-(and (= emacs-major-version 23) (include 'color-theme))
+(and (or (= emacs-major-version 23) 
+	 (= emacs-major-version 24)) 
+     (include 'color-theme))
 ;;(message "color-theme not present")
 
     ;; (color-theme-initialize)
@@ -340,6 +342,6 @@
      (yas/field-highlight-face ((t (:background "DarkSeaGreen2"))))
      (yas/mirror-highlight-face ((t (:background "LightYellow2")))))))
 
-(if (= emacs-major-version 23)
+(if (or (= emacs-major-version 23) (= emacs-major-version 24))
  (my-color-theme-fancy))
   

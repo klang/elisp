@@ -1,3 +1,6 @@
+(unless (package-installed-p 'clojure-mode)
+  (package-install 'clojure-mode))
+
 (defun lisp-enable-paredit-hook () (paredit-mode 1))
 (add-hook 'clojure-mode-hook 'lisp-enable-paredit-hook)
 
