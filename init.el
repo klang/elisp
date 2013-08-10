@@ -20,6 +20,7 @@
   '(
     ;; old stuff moved from elisp/site
     rect-mark
+    paredit
     ;; Clojure stuff
     clojure-mode 
     ;; nrepl -- running bleeding edge instead 
