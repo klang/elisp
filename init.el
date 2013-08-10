@@ -18,6 +18,8 @@
 
 (defvar my-packages
   '(
+    ;; old stuff moved from elisp/site
+    rect-mark
     ;; Clojure stuff
     clojure-mode 
     ;; nrepl -- running bleeding edge instead 
