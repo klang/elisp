@@ -14,7 +14,7 @@
   (define-key c-mode-base-map "\C-m" 'newline-and-indent)
   (define-key c-mode-base-map ";" 'self-insert-command)
   (define-key c-mode-base-map "," 'self-insert-command)
-  (define-key php-mode-map [tab] 'yas/expand)
+  (define-key php-mode-map [tab] 'yas-expand)
 
   (setq case-fold-search t)
   (setq c-basic-offset 2)

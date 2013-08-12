@@ -1,9 +1,0 @@
-#name : if, elsif, else ...
-# --
-if ($1}) {
-    $2
-} elseif ($3) {
-    $4
-} else {
-    $0
-}

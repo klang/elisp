@@ -43,12 +43,9 @@
 (iswitchb-mode 1)
 (setq iswitchb-buffer-ignore '("^ " "^*"))
 
-;;; http://code.google.com/p/yasnippet/
-;(add-to-list 'load-path "~/elisp/site/yasnippet-0.5.7")
-;(require 'yasnippet) ;; not yasnippet-bundle
-(if (fboundp 'yas/initialize) 
- (progn (yas/initialize)
-	(yas/load-directory (concat dotfiles-dir "elisp/site/yasnippets"))))
+(if (and (require 'yasnippet) (fboundp 'yas--initialize))
+ (progn (yas--initialize)
+	(yas-load-directory (concat dotfiles-dir "elisp/yasnippets"))))
 
 ;;(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "cedet/srecode")))
 ;;(require 'srecode-load)
