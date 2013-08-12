@@ -27,10 +27,3 @@
 ;; load the file that contain all the wrk sets
 (load (concat dotfiles-dir "elisp/dot_wrk-current.el"))
 
-;; http://www.emacswiki.org/emacs/download/sqlplus.el
-
-;;(when (not (file-exists-p (concat root-dir "el-get")))
-;;  ;; load extra packages
-;;  (load-file (concat root-dir "packages-el-get.el")))
-
-

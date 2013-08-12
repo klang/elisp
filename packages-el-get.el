@@ -19,6 +19,8 @@
 (unless (require 'el-get nil t)
   (install-el-get))
 
+;; http://www.emacswiki.org/emacs/download/sqlplus.el
+
 (setq el-get-sources
       '(
 ;;	(:name dirtree

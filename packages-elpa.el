@@ -27,6 +27,7 @@
     rainbow-mode
     ;; Paren matching
 ;    mic-paren
+;    auto-complete
     ;; Color themes
     zenburn-theme solarized-theme
     ;; Undo tree
