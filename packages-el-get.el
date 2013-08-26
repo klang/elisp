@@ -35,6 +35,14 @@
         (:name sqlplus
          :type emacswiki
          :features sqlplus)
+;; running off the latest preview of nrepl
+	(:name nrepl
+	 :type git
+	 :url "https://github.com/clojure-emacs/nrepl.el.git"
+         :features nrepl)
+	(:name four-clj
+         :type git
+         :url "https://github.com/klang/4clj-el")
 ;;        (:name yaml-mode
 ;;         :type git
 ;;         :url "https://github.com/yoshiki/yaml-mode.git"
