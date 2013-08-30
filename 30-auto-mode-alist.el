@@ -10,3 +10,5 @@ set-auto-mode checks that the requested MODE exists"
 (add-to-list 'auto-mode-alist '("\\.esh$" . emacs-lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+
