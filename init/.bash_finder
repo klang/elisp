@@ -1,0 +1,13 @@
+# -*- mode: sh -*-
+
+## opens a standard file explorer window at the current location
+## e  - just a window at current location
+
+function e {
+    if [ $# -eq 0 ]; then
+        target=.
+    else
+        target=$1
+    fi
+    open $target
+};
