@@ -8,6 +8,10 @@
 
 # http://www.emacswiki.org/emacs/EmacsClient
 
+
+# (setq server-socket-dir "~/.emacs.d/server")
+
+
 function new-frame() {
     emacsclient -e "(new-frame)"
 }

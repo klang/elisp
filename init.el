@@ -27,3 +27,6 @@
 ;; load the file that contain all the wrk sets
 (load (concat dotfiles-dir "elisp/dot_wrk-current.el"))
 
+(include 'server)
+
+(unless (server-running-p) (server-start))

@@ -35,7 +35,7 @@
         (:name sqlplus
          :type emacswiki
          :features sqlplus)
-;; running off the latest preview of nrepl
+	;; running off the latest preview of nrepl
 	(:name nrepl
 	 :type git
 	 :url "https://github.com/clojure-emacs/nrepl.el.git"

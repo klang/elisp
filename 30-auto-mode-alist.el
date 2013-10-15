@@ -11,4 +11,10 @@ set-auto-mode checks that the requested MODE exists"
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
 
+;; (autoload 'markdown-mode "markdown-mode"
+;;    "Major mode for editing Markdown files" t)
+;; (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+;; (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+;; (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
