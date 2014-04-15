@@ -36,10 +36,15 @@
          :type emacswiki
          :features sqlplus)
 	;; running off the latest preview of nrepl
-	(:name nrepl
+	(:name cider
 	 :type git
-	 :url "https://github.com/clojure-emacs/nrepl.el.git"
-         :features nrepl)
+	 :url "https://github.com/clojure-emacs/cider.git"
+         :features cider)
+	;; ac-nrepl needs auto-complete from elpa
+	(:name ac-nrepl
+         :type git
+         :url "https://github.com/clojure-emacs/ac-nrepl.git"
+	 :features ac-nrepl)
 	(:name four-clj
          :type git
          :url "https://github.com/klang/4clj-el")

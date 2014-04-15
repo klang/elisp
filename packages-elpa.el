@@ -1,6 +1,11 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+             '("marmalade" . "http://marmalade-repo.org/packages/")
+	     '("melpa" . "http://melpa.milkbox.net/packages/"))
+
+(when (< emacs-major-version 24)
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -25,9 +30,12 @@
     highlight-parentheses highline col-highlight crosshairs vline
     highlight-symbol hl-sexp idle-highlight
     rainbow-mode
+    dash
+    exec-path-from-shell
+    pkg-info
     ;; Paren matching
 ;    mic-paren
-;    auto-complete
+    auto-complete ;; needed by ac-nrepl
     ;; Color themes
     zenburn-theme solarized-theme
     ;; Undo tree

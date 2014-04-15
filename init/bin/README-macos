@@ -1,0 +1,4 @@
+# http://blog.jr0cket.co.uk/2012/10/using-emacs-24-server-on-mac-osx-for.html
+sudo mv /usr/bin/emacs emacs22
+sudo mv /usr/bin/emacsclient emacsclient22
+sudo mv /usr/bin/emacs-undumped emacs22-undumped

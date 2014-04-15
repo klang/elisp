@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c -a "" $*
