@@ -17,7 +17,13 @@
    "https://github.com/dimitri/el-get/raw/master/el-get-install.el"))
 
 (unless (require 'el-get nil t)
-  (install-el-get))
+  ;(install-el-get)
+(url-retrieve
+ "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
+ (lambda (s)
+   (goto-char (point-max))
+   (eval-print-last-sexp)))
+)
 
 ;; http://www.emacswiki.org/emacs/download/sqlplus.el
 
@@ -36,18 +42,18 @@
          :type emacswiki
          :features sqlplus)
 	;; running off the latest preview of nrepl
-	(:name cider
-	 :type git
-	 :url "https://github.com/clojure-emacs/cider.git"
-         :features cider)
-	;; ac-nrepl needs auto-complete from elpa
-	(:name ac-nrepl
-         :type git
-         :url "https://github.com/clojure-emacs/ac-nrepl.git"
-	 :features ac-nrepl)
-	(:name four-clj
-         :type git
-         :url "https://github.com/klang/4clj-el")
+;;	(:name cider
+;;	 :type git
+;;	 :url "https://github.com/clojure-emacs/cider.git"
+;;         :features cider)
+;;	;; ac-nrepl needs auto-complete from elpa
+;;	(:name ac-nrepl
+;;         :type git
+;;         :url "https://github.com/clojure-emacs/ac-nrepl.git"
+;;	 :features ac-nrepl)
+;;	(:name four-clj
+;;         :type git
+;;         :url "https://github.com/klang/4clj-el")
 ;;        (:name yaml-mode
 ;;         :type git
 ;;         :url "https://github.com/yoshiki/yaml-mode.git"

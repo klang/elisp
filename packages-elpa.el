@@ -21,6 +21,7 @@
     yasnippet
     ;; Clojure stuff
     clojure-mode 
+    ac-nrepl
     ;; nrepl -- running bleeding edge instead 
     ;; Fuzzy match
 ;    fuzzy fuzzy-match
