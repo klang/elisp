@@ -12,7 +12,7 @@
 ;;; Ignore some files when completing
 (setq completion-ignored-extensions
   '("~" ".aux" ".a" ".bbl" ".blg" ".dvi" ".elc"
-    ".hc" ".hi" ".log" ".mlc" ".o" ".toc" ".ast"))
+    ".hc" ".hi" ".log" ".mlc" ".o" ".toc" ".ast" ".pyc"))
 
 ;;; Use one of these files when completing, if possible
 ;; complete to these regexps if possible
@@ -40,8 +40,8 @@
 (setq default-directory "~/")
 
 ;;; http://www.emacswiki.org/cgi-bin/wiki/IswitchBuffers
-(iswitchb-mode 1)
-(setq iswitchb-buffer-ignore '("^ " "^*"))
+;; (iswitchb-mode 1)
+;; (setq iswitchb-buffer-ignore '("^ " "^*"))
 
 (if (and (require 'yasnippet) (fboundp 'yas--initialize))
  (progn (yas--initialize)
@@ -52,6 +52,7 @@
 
 (require 'ido)
 (ido-mode t)
+(icomplete-mode t)
 
 ;; mouse selection immediately injected to the kill ring
 (setq mouse-drag-copy-region t)
