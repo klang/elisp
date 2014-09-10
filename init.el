@@ -10,7 +10,7 @@
 (defvar dotfiles-dir (file-name-directory 
 		      (or load-file-name (buffer-file-name))))
 
-(add-to-list 'load-path dotfiles-dir)
+;;(add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "elisp"))
 
 (load (concat dotfiles-dir "elisp/packages-elpa.el"))
