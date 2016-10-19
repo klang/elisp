@@ -1,5 +1,7 @@
 (unless (package-installed-p 'clojure-mode)
   (package-install 'clojure-mode))
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
 
 (defun lisp-enable-paredit-hook () (paredit-mode 1))
 (add-hook 'clojure-mode-hook 'lisp-enable-paredit-hook)
@@ -29,6 +31,7 @@
             )))
 
 (add-hook 'clojure-mode-hook 'tweak-clojure-syntax)
+(add-hook 'cider-repl-mode-hook 'tweak-clojure-syntax)
 
 ;(custom-set-faces
   ;; custom-set-faces was added by Custom.

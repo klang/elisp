@@ -29,7 +29,7 @@
 	  (paren-mode-if-wanted)
 	  (add-hook 'find-file-hooks 'paren-mode-if-wanted))))
 
-(when (= emacs-major-version 24)
+(when (> emacs-major-version 24)
   (if (require 'paren)
       (progn (set-face-background 'show-paren-match-face (face-background 'default))
 	     (set-face-foreground 'show-paren-match-face "#fff")

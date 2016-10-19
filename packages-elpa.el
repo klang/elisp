@@ -14,6 +14,10 @@
 (defvar my-packages
   '(
     sql-indent
+    ;; jedi
+    ;; deferred
+    ;; epc
+    ;; ctable
     ;; old stuff moved from elisp/site
     rect-mark
     paredit

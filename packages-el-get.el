@@ -62,7 +62,7 @@
 
 (setq my-el-get-packages
       (append
-       '(sqlplus)
+       '(python-environment)
        (mapcar 'el-get-source-name el-get-sources)))
   
 (el-get 'sync my-el-get-packages)

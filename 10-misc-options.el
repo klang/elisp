@@ -53,6 +53,9 @@
 (require 'ido)
 (ido-mode t)
 (icomplete-mode t)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+
 
 ;; mouse selection immediately injected to the kill ring
 (setq mouse-drag-copy-region t)

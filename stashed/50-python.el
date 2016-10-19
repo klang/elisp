@@ -2,6 +2,7 @@
 ;;(setq py-install-directory "~/.emacs.d/elpa/python-mode-6.1.3")
 ;;(add-to-list ' load-path py-install-directory)
 (require 'python-mode)
+(require 'python-environment)
 
 ; use IPython
 (setq-default py-shell-name "ipython")
@@ -18,3 +19,8 @@
 (setq py-split-windows-on-execute-p nil)
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
+
+
+;; M-x el-get-install RET python-environment RET
+;;(add-hook 'python-mode-hook 'jedi:setup)
+;;(setq jedi:complete-on-dot t)

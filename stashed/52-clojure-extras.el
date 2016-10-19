@@ -74,6 +74,7 @@ point."
 
 (add-hook 'slime-repl-mode-hook 'clojure-mode-slime-font-lock)
 (add-hook 'clojure-mode-hook 'clojure-mode-slime-font-lock)
+(add-hook 'cider-repl-mode-hook 'clojure-mode-slime-font-lock)
 
 (add-hook 'nrepl-mode-hook 
 	  (lambda ()
@@ -87,3 +88,5 @@ point."
 (set-language-environment "UTF-8")
 (setq slime-net-coding-system 'utf-8-unix)
 ;;(add-hook 'slime-connected-hook 'slime-redirect-inferior-output)
+(defun clojure-key-map ()
+  (interactive) (clojure-mode-slime-font-lock))

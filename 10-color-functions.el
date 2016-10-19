@@ -1,4 +1,4 @@
-(when  (= emacs-major-version 24)
+(when  (= emacs-major-version 25)
   (add-to-list 'custom-theme-load-path "~/.emacs.d/elisp/themes")
   (load-theme 'fancy-automatic t))  
 
@@ -26,8 +26,9 @@
   )
 
 (when  (<= emacs-major-version 23)
-  (and (or (= emacs-major-version 23) 
-	   (= emacs-major-version 24)) 
+  (and (or (= emacs-major-version 23)
+	   (= emacs-major-version 24)
+	   (= emacs-major-version 25))
        (include 'color-theme))
 ;;(message "color-theme not present")
 

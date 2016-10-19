@@ -33,8 +33,11 @@
   (save-excursion
     (while (query-replace-regexp "^.*\\(~/.*\\)$" "(find-file \"\\1\")"))))
 
-(defun dos2unix nil nil (interactive) 
+(defun dos2unix nil nil (interactive)
   (set-buffer-file-coding-system 'undecided-unix))
+(defun unix2dos nil nil (interactive) 
+       (set-buffer-file-coding-system 'undecided-dos))
+
 
 (defun replace-multiple (replaces)
   (while replaces
@@ -44,6 +47,11 @@
       )
     )
   )
+
+(defun to-jason nil
+  "makes html legal json strings"
+  (interactive)
+  (replace-multiple '(("\"" "\\\"") ("\n" "\\n"))))
 
 (defun narrow-to-function ()
   "Narrows to current function (php or perl)"
