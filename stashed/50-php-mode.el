@@ -61,7 +61,7 @@
 (add-hook 'php-mode-hook 'klang/php-mode-init)
 (require 'autopair)
 (add-hook 'php-mode-hook #'(lambda () (autopair-mode)))
-(require 'php-mode)
+;; (require 'php-mode)
 
 
 ;(add-hook 'php-mode-hook

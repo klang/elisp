@@ -43,9 +43,9 @@
 ;; (iswitchb-mode 1)
 ;; (setq iswitchb-buffer-ignore '("^ " "^*"))
 
-(if (and (require 'yasnippet) (fboundp 'yas--initialize))
- (progn (yas--initialize)
-	(yas-load-directory (concat dotfiles-dir "elisp/yasnippets"))))
+;;(if (and (require 'yasnippet) (fboundp 'yas--initialize))
+;; (progn (yas--initialize)
+;;	(yas-load-directory (concat dotfiles-dir "elisp/yasnippets"))))
 
 ;;(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "cedet/srecode")))
 ;;(require 'srecode-load)

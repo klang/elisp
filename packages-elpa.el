@@ -1,8 +1,9 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/")
-	     '("melpa" . "http://melpa.milkbox.net/packages/"))
-
+(setq package-archives '(;;("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ;;("user42" . "http://download.tuxfamily.org/user42/elpa/packages/")
+			 ))
 (when (< emacs-major-version 24)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
@@ -13,7 +14,7 @@
 
 (defvar my-packages
   '(
-    sql-indent
+    ;; sql-indent
     ;; jedi
     ;; deferred
     ;; epc
@@ -22,7 +23,7 @@
     rect-mark
     paredit
     php-mode
-    yasnippet
+    ;; yasnippet
     ;; Clojure stuff
     clojure-mode 
     ac-nrepl
@@ -42,6 +43,7 @@
 ;    mic-paren
     auto-complete ;; needed by ac-nrepl
     ;; Color themes
+    company
     zenburn-theme solarized-theme
     ;; Undo tree
     undo-tree)
