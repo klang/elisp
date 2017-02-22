@@ -20,7 +20,6 @@
 (add-to-list 'load-path (concat dotfiles-dir "elisp"))
 
 (load (concat dotfiles-dir "elisp/packages-elpa.el"))
-(load (concat dotfiles-dir "elisp/packages-el-get.el"))
 
 ;; make sure that emacs saves custom variables somewhere else than in .emacs
 (setq custom-file (concat dotfiles-dir ".emacs-custom.el"))
